@@ -1,0 +1,49 @@
+h3{
+    margin-bottom: 0;
+}
+.theme{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: brown;
+}
+.myPostsBlock{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 30px;
+}
+.PostBody{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1f;
+}
+
+.FormPost textarea{
+    overflow: auto;
+    resize: none;
+    width: 500px;
+    height: 30px;
+    border: 1px solid rgba(165, 42, 42, 0.3);
+    border-radius: 5px;
+    display: flex;
+    line-height: 30px;
+    padding: 0px 0px 0px 10px;
+}
+textarea:focus{
+    outline: none;
+}
+.FormPost{
+    display: flex;
+    margin: 0px 0px 20px 0px;
+    align-items: center;
+}
+.FormPost button {
+    padding: 9px;
+    border: none;
+    border-radius: 5px;
+    background-color:brown;
+    cursor: pointer;
+    color: white;
+}
+.FormPost button:active{
+    background-color: hotpink;
+}

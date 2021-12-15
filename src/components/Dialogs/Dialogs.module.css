@@ -1,0 +1,28 @@
+.dialogs{
+    display: flex;
+}
+.dialogsItems{
+    padding: 20px 0px 0px 0px;
+    flex-basis: 50%;
+}
+.messages{
+    padding: 20px 0px 0px 0px;
+    flex-basis: 50%;
+}
+.dialogsForm{
+    margin: 20px 0px 0px 0px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+}
+.dialogsForm textarea{
+    overflow: auto;
+    resize: none;
+    width: 100%;
+    height: auto;
+    height: 30px;
+    border: 1px solid rgba(165, 42, 42, 0.3);
+    border-radius: 5px;
+    line-height: 30px;
+    padding: 0px 0px 0px 10px;
+}

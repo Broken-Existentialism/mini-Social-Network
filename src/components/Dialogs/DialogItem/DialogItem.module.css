@@ -1,0 +1,42 @@
+.dialog{
+    max-width: 550px;
+    margin: 2px 0px 0px 0px;
+}
+.dialog a {
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    color:darkslategrey;
+    text-decoration: none;
+}
+.dialog a.active{
+    color:gold;
+}
+.dialog :hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dialogBody{
+    padding: 0px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    height: 71px;
+    background-color: white;
+}
+.imageDialog {
+    margin: 0px 15px 0px 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imageDialog img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dialogInfo{
+    height: 100%;
+}
+.dialogName{
+    margin: 15px 0px 0px 0px;
+    font-size: 14px;
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.nav{
+    grid-area: nav;
+    background-color: rgb(236,238,242);
+}
+.item{
+    margin: 20px 10px 0px 0px;
+}
+.item a{
+    display: block;
+    padding: 5px 0px 5px 10px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-weight: 1000;
+}
+.item a:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.item a.active{
+    background-color: rgba(165, 42, 42, 0.5);
+}
