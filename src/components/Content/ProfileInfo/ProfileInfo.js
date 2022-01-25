@@ -1,6 +1,7 @@
 import s from'./ProfileInfo.module.css';
+import userAvatar from '../../../assets/images/users1.jpg';
 
-const ProfileInfo = (props) =>{
+const Profile = (props) =>{
     return(
         <div className={s.ProfileInfoBlock}>
             <ProfileAvatar />
@@ -10,14 +11,14 @@ const ProfileInfo = (props) =>{
 const ProfileAvatar = (props) =>{
     return (
         <div className={s.avatarBody}>
-            <div className={s.avatar}>
-                <img src='https://sun9-88.userapi.com/impg/8f8EwQqc41bI2EjuehbuBVMCnecyffZbAfvgFA/XumOviX0KuE.jpg?size=640x800&quality=96&sign=929faace9941eadefc624925c2251cd1&type=album'></img>
+            <div className={s.avatarImage}>
+                <img src={userAvatar}></img>
             </div>
-            <div className={s.description}>
+            <div className={s.avatarDescription}>
                 My Description
             </div>
         </div>
     )
 }
 
-export default ProfileInfo;
+export default Profile;

@@ -1,12 +1,12 @@
-import style from'./Content.module.css';
-import MyPosts from './MyPosts/MyPosts';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import s from'./Content.module.css';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
+import Profile from './ProfileInfo/ProfileInfo';
 
-const Content = (props) =>{
+const Content = () =>{
     return (
-        <div className={style.ContentBody}>
-            <ProfileInfo/>
-            <MyPosts state={props.state} />
+        <div className={s.ContentBody}>
+            <Profile />
+            <MyPostsContainer />
         </div>
     );
 }

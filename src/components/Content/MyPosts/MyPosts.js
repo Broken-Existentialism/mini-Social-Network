@@ -2,13 +2,15 @@ import s from'./MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 
+
 const MyPosts = (props) =>{
-    let PostsDataArray = props.state.posts.map (elem => <Post message={elem.message} like={elem.likes} /> )
-    let newPostElement = React.createRef()
-    
-    let addPost = () =>{
-        let text = newPostElement.current.value
-        alert(text)
+    let onAddPost = () =>{
+        props.addPost()
+    }
+
+    let onPostChange = (e) =>{
+        let text = e.target.value
+        props.postChange(text)
     }
     return (
         <div className={s.myPostsBlock}>
@@ -16,16 +18,21 @@ const MyPosts = (props) =>{
                 <h3> My posts:</h3>
             </div>
             <div className={s.FormPost}>
-                <div ClassName={s.TextArea}>
-                    <textarea ref={newPostElement} placeholder="Что у вас нового?"></textarea>
+                <div className={s.TextArea}>
+                    <textarea  onChange={onPostChange} placeholder='Enter value...' value={props.newPostText}/>
                 </div>
-                <div ClassName={s.Button}>
-                    <button  ClassName={s.ButtonPosts} onClick={addPost} >Add Post</button>
+                <div className={s.Button}>
+                    <button  className={s.ButtonPosts} onClick={onAddPost} >Add Post</button>
                 </div>
             </div>
             <div className={s.PostBody}>
             {
-                PostsDataArray
+                props.posts.map (post => <Post 
+                        key={post.id} 
+                        post={post}
+                        addLike={props.addLike}
+                        delayPost={props.delayPost}
+                    /> )
             }  
             </div>
         </div>

@@ -1,0 +1,81 @@
+.bodyBlock{
+    display: flex;
+    margin: 10px;
+    
+}
+.bodyUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    margin: 0px 10px 0px 0px ;
+    overflow: hidden;
+}
+.image{
+    width: 80px;
+    height: 80px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.buttonFollow button{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:brown;
+    cursor: pointer;
+    color: white;
+}
+.buttonFollow button:active{
+    background-color: hotpink;
+}
+.bodyInfo{
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+    border-radius: 15px;
+    background-color: white;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.userStatus{
+    margin: 5px 0px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.userLocation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 5px 10px 5px 0px;
+}
+.selectedPage{
+    width: 20px;
+    margin: 0px 5px 0px 0px;
+    padding: 3px;
+    border: none;
+    background-color:rgb(165, 42, 42);
+    cursor: pointer;
+    color: white;
+}
+
+.btn {
+    width: 20px;
+    margin: 0px 5px 0px 0px;
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*
+.usersList{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+*/

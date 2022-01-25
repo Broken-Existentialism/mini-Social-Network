@@ -1,0 +1,26 @@
+.ToDoItemBody{
+    width: 484px;
+    text-align: left;
+    margin-top: 15px;
+    background: linear-gradient(90deg, rgba(228,40,66,1) 25%, rgba(145,9,24,1) 90%);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ToDoItemDelay{
+    padding: 15px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+}
+.ToDoItemText{
+    display: inline-block;
+    overflow: auto;
+    padding: 15px;
+}
+.ToItemStrike {
+    padding: 15px;
+    text-decoration: line-through;
+}

@@ -26,3 +26,11 @@
     line-height: 30px;
     padding: 0px 0px 0px 10px;
 }
+.dialogsForm button{
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color:brown;
+    cursor: pointer;
+    color: white;
+}

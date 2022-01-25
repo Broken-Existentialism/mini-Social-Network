@@ -1,9 +1,14 @@
 .header{
     background-color: brown;
-    grid-area: header;
-    padding: 4px;
+    padding: 1px;
+    position:sticky;
+    top: 0;
 }
 .header img{
-    width: 85px;
-    height: 56px;
+    width: 65px;
+    height: 47px;
+}
+.headerContainer{
+    margin: 0 auto;
+    width: 960px;
 }

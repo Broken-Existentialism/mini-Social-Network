@@ -1,14 +1,19 @@
-.description{
+.avatarDescription{
     margin: 10px 0px 0px 0px;
     color: brown;
     text-transform: uppercase;
 }
-.avatar img{
+.avatarImage{
+    width: 200px;
+    height: 250px;
+}
+.avatarImage img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 .avatarBody{
+    margin: 0px 0px 0px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,0 +1,27 @@
+.ToDoListBody{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ToDoListForm{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+}
+.ToDoListForm textarea{
+    padding: 15px 0px 0px 15px;
+    height: 50px;
+    overflow: auto;
+    resize: none;
+    width: 400px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid rgba(228,40,66,1); 
+}
+.ToDoListForm button{
+    height: 50px;
+    border-radius: 0 5px 5px 0;
+    background: linear-gradient(90deg, rgba(228,40,66,1) 25%, rgba(145,9,24,1) 90%);
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
