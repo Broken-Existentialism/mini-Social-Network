@@ -1,15 +1,8 @@
 h3{
     margin-bottom: 0;
 }
-.theme{
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: brown;
-}
 .myPostsBlock{
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 10px;
+    margin: 10px 0px 10px 0px;
 }
 .PostBody{
     display: grid;

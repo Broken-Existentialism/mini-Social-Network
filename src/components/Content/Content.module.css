@@ -3,3 +3,6 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
+.ContentBlock{
+    margin: 0px 0px 0px 10px;
+}

@@ -1,22 +1,17 @@
-import s from'./MyPosts.module.css';
+import s from'./UserPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 
-
-const MyPosts = (props) =>{
+const UserPosts = (props) =>{
     let onAddPost = () =>{
         props.addPost()
     }
-
     let onPostChange = (e) =>{
         let text = e.target.value
         props.postChange(text)
     }
     return (
         <div className={s.myPostsBlock}>
-            <div className={s.theme}>
-                <h3> My posts:</h3>
-            </div>
             <div className={s.FormPost}>
                 <div className={s.TextArea}>
                     <textarea  onChange={onPostChange} placeholder='Enter value...' value={props.newPostText}/>
@@ -38,4 +33,4 @@ const MyPosts = (props) =>{
         </div>
     );
 }
-export default MyPosts;
+export default UserPosts;
