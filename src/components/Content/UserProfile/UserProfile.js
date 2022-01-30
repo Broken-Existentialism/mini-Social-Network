@@ -6,7 +6,7 @@ const UserProfile = (props) =>{
         <div className={s.ProfileInfoBlock}>
             <div className={s.avatarBody}>
                 <div className={s.avatarImage}>
-                    <img src={userAvatar}></img>
+                    <img src={props.photos?.large}></img>
                 </div>
                 <div className={s.avatarDescription}>
                     My Description

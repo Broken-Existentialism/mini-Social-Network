@@ -7,7 +7,7 @@ const SET_IS_FETCHING = 'SET_ISFETCHING'
 
 let stateInitialization = {
     users: [],
-    pageSize: 5,
+    pageSize: 20,
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
@@ -101,6 +101,5 @@ export const setIsFetching = (isFetching) =>{
         isFetching: isFetching,
     }
 }
-
 
 export default usersReducer 

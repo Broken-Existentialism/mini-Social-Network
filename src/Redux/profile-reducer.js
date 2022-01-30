@@ -2,9 +2,12 @@ const ADD_POST = 'ADD-POST'
 const NEW_POST_TEXT_CHANGE = 'NEW-POST-TEXT-CHANGE'
 const ADD_LIKE = 'ADD_LIKE'
 const DELAY_POST = 'DELAY_POST'
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
+
 let stateInitialization = {
     posts: [],
-    newPostText:''
+    newPostText:'',
+    profile: null,
 }
 
 const profileReducer = (state = stateInitialization, action) =>{
@@ -38,6 +41,11 @@ const profileReducer = (state = stateInitialization, action) =>{
                 ...state,
                 posts: [...state.posts.filter (post => post.id !== action.itemID)]
             }
+        case SET_USER_PROFILE:
+            return{
+                ...state,
+                profile: action.profile
+            }
         default: return state
     }
 }
@@ -60,6 +68,12 @@ export const delayPost = (itemID) =>{
     return{
         type: DELAY_POST,
         itemID: itemID,
+    }
+}
+export const setUserProfile = (profile) =>{
+    return{
+        type: SET_USER_PROFILE,
+        profile: profile
     }
 }
 export default profileReducer

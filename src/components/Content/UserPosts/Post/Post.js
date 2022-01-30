@@ -10,7 +10,7 @@ const Post = (props) =>{
                 <div className={s.postBlock}> 
                     <div className={s.postInfo}>
                         <div className={s.postImage}>
-                            <img src={userPhoto}></img>
+                            <img src={props.photos.small}></img>
                         </div>
                         <div className={s.postDelete} onClick={ ()=>props.delayPost(props.post.id) }> 
                             <img src={deleteIcon}></img> 

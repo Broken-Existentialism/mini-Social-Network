@@ -6,6 +6,7 @@ const CHANGE_IS_COMPLETE = 'CHANGE_IS_COMPLETE'
 let stateInitialization = {
    todoArray: [],
    todoText: '',
+   isComplete: false
 }
 const todolistReducer = (state = stateInitialization, action) =>{
     switch(action.type){
