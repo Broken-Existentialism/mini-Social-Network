@@ -1,19 +1,39 @@
 import s from './UserDescription.module.css';
+import Preloader from '../../common/Preloader/Preloader'
 
 const UserDescription = (props) =>{
+
+    if(!props.profile){
+        return <div></div>
+    }
+
+    let contacts = []
+    let contactsObj = props.profile.contacts
+    for (let obj in contactsObj){
+        if(contactsObj[obj]){
+            contacts.push(obj)
+        }
+    }
+    
     return(
         <div className={s.UserDescriptionBody}>
             <div className={s.userFullName}>
-                
+                {props.profile.fullName}
             </div>
             <div className={s.userAbout}>
-                
+                {props.profile.aboutMe}
             </div>
             <div className={s.userContacts}>
-               
+               {
+                   contacts.map (contact => {
+                       return(
+                           <div>{`${contact}: ${contactsObj[contact]}`}</div>
+                       )
+                   })
+               }
             </div>
             <div className={s.userJobStatus}>
-                JobStatus
+                {props.profile.lookingForAJobDescription}
             </div>
         </div>
     )

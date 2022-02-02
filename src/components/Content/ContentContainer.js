@@ -31,6 +31,7 @@ class ContentAPI extends React.Component {
                         />
                         <UserPosts
                             photos={this.props.profile?.photos}
+                            fullName={this.props.profile?.fullName}
                             posts ={this.props.posts}
                             newPostText ={this.props.newPostText}
                             addPost ={this.props.addPost}

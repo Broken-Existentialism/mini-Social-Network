@@ -22,7 +22,8 @@ const UserPosts = (props) =>{
             </div>
             <div className={s.PostBody}>
             {
-                props.posts.map (post => <Post 
+                props.posts.map (post => <Post
+                        fullName = {props.fullName}
                         photos = {props.photos}
                         key={post.id} 
                         post={post}
