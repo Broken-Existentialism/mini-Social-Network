@@ -1,30 +1,17 @@
-import React from 'react';
-import {Route} from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
-import News from './components/News/News';
-import Music from './components/Music/Music';
-import Settings from './components/Settings/Settings';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
-import NavContainer from './components/Navbar/NavContainer';
-import UsersContainer from './components/Users/UsersContainer';
-import ToDoListContainer from './components/ToDoList/ToDoListContainer';
-import ContentContainer from './components/Content/ContentContainer';
+import React from 'react';
+import NavContainessr from './components/Navbar/NavContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
+import NavigationContainer from './components/Navigation/Navigation';
 
 const App = (props)=> {
   return (
       <div className='wrapper'>
-          <Header />
+          <HeaderContainer/>
           <div className='container'>
             <NavContainer />
             <div className='wrapper-content'>
-              <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-              <Route path='/profile' render={() => <ContentContainer/>}/>
-              <Route path='/news' component={News} />
-              <Route path='/music' component={Music} />
-              <Route path='/settings' component={Settings} />
-              <Route path='/users' render={() => <UsersContainer/>}/>
-              <Route path='/todolist' render={() => <ToDoListContainer />}/>
+               <NavigationContainer/>
             </div>
           </div>
       </div>

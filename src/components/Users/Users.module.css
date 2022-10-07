@@ -1,7 +1,6 @@
 .bodyBlock{
     display: flex;
     margin: 10px;
-    
 }
 .bodyUser{
     display: flex;
@@ -23,15 +22,17 @@
 }
 .buttonFollow button{
     padding: 5px 10px 5px 10px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
-    background-color:brown;
+    background-color: white;
     cursor: pointer;
-    color: white;
+    color: black;
 }
+/*
 .buttonFollow button:active{
     background-color: hotpink;
 }
+*/
 .bodyInfo{
     font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
     border-radius: 15px;
@@ -62,7 +63,6 @@
     cursor: pointer;
     color: white;
 }
-
 .btn {
     width: 20px;
     margin: 0px 5px 0px 0px;

@@ -1,11 +1,14 @@
-.avatarDescription{
-    margin: 10px 0px 0px 0px;
-    color: brown;
-    text-transform: uppercase;
+.ProfileInfoBlock{
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    margin: 0px 0px 0px 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 .avatarImage{
-    width: 200px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
 }
 .avatarImage img{
     width: 100%;
@@ -13,11 +16,9 @@
     object-fit: cover;
 }
 .avatarBody{
-    margin: 0px 0px 0px 10px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
+    /*align-items: center;*/
 }

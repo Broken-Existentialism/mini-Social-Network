@@ -1,9 +1,13 @@
+import { getUsers } from "../api/api"
+import { createFollow, createUnfollow } from '../api/api';
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 const SET_TOTAL_USERT_COUNT = 'SET_TOTAL_USERT_COUNT'
 const SET_IS_FETCHING = 'SET_ISFETCHING'
+const SET_IS_FOLLOWING_PROGRESS = 'SET_IS_FOLLOWING_PROGRESS'
 
 let stateInitialization = {
     users: [],
@@ -11,6 +15,7 @@ let stateInitialization = {
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
+    followingInProgress: [],
 }
 
 const usersReducer = (state = stateInitialization, action) =>{
@@ -61,6 +66,13 @@ const usersReducer = (state = stateInitialization, action) =>{
                 ...state,
                 isFetching: action.isFetching
             }
+        case SET_IS_FOLLOWING_PROGRESS:
+            return{
+                ...state,
+                followingInProgress: action.isFetching 
+                ? [...state.followingInProgress, action.userId]
+                : state.followingInProgress.filter(id => id !== action.userId)
+            }
         default: return state
     }
 }
@@ -100,6 +112,55 @@ export const setIsFetching = (isFetching) =>{
         type: SET_IS_FETCHING,
         isFetching: isFetching,
     }
+}
+export const setFollowingIsProgress = (isFetching, userId) =>{
+    return{
+        type: SET_IS_FOLLOWING_PROGRESS,
+        isFetching,
+        userId,
+    }
+}
+export const getUsersThunkCreator = (currentPage, pageSize) =>{
+    return(
+        (dispatch) =>{
+            dispatch(setCurrentPage(currentPage))
+            dispatch(setIsFetching(true))
+                getUsers(currentPage, pageSize)
+                .then (data =>{
+                    dispatch(setUsers(data.items))
+                    dispatch(setTotalUsersCount(data.totalCount))
+                    dispatch(setIsFetching(false))
+                })
+        }
+    )
+}
+export const followThunkCreator = (userId) =>{
+    return(
+        (dispatch) =>{
+            dispatch(setFollowingIsProgress(true, userId))
+            createFollow(userId)
+            .then(data =>{
+                if(data.resultCode === 0){
+                    dispatch(follow (userId))
+                }
+                dispatch(setFollowingIsProgress(false, userId))
+            })
+        }
+    )
+}
+export const unfollowThunkCreator = (userId) =>{
+    return(
+        (dispatch)=>{
+            dispatch(setFollowingIsProgress(true, userId))
+            createUnfollow(userId)
+            .then(data =>{
+                if(data.resultCode === 0){
+                    dispatch(unfollow(userId))
+                }
+                dispatch(setFollowingIsProgress(false, userId))
+            })
+        }
+    )
 }
 
 export default usersReducer 

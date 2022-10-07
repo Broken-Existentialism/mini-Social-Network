@@ -1,10 +1,10 @@
 import s from './UserDescription.module.css';
-import Preloader from '../../common/Preloader/Preloader'
+
 
 const UserDescription = (props) =>{
 
     if(!props.profile){
-        return <div></div>
+        return <div className={s.UserDescriptionBody}></div>
     }
 
     let contacts = []

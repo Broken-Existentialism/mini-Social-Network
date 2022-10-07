@@ -1,6 +1,8 @@
-import { connect } from "react-redux";
 import ToDoList from "./ToDoList";
+import { connect } from "react-redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { changeToDoText, addToDoItem, delayToDoItem, changeIsComplete} from '../../Redux/todolist-reducer';
+
 let mapStateToProps = (state) =>{
     return{
         todoText: state.todolistPage.todoText,
@@ -8,11 +10,13 @@ let mapStateToProps = (state) =>{
     }
 }
 
+const AuthRedirectComponent = withAuthRedirect(ToDoList)
+
 const ToDoListContainer = connect(mapStateToProps, {
     changeToDoText,
     addToDoItem,
     delayToDoItem,
     changeIsComplete,
-})(ToDoList)
+})(AuthRedirectComponent )
 
 export default ToDoListContainer

@@ -5,12 +5,12 @@ const ToDoList = (props) =>{
     return(
         <div className={s.ToDoListBody}>
 
-            <div><h1>Список задач: {props.todoArray.length}</h1></div>
+            <div className={s.ToDoHeader}><h1>Список задач: {props.todoArray.length}</h1></div>
             
-           <div className={s.ToDoListForm}>
+            <div className={s.ToDoListForm}>
                 <textarea onChange={(e) => props.changeToDoText(e.target.value)} placeholder='Введите задачу...'  value={props.todoText}></textarea>
                 <button onClick={props.todoText ? props.addToDoItem : ''}>Сохранить</button>
-           </div>
+            </div>
 
            <div className={s.ToDoListItems}>
                {

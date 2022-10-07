@@ -25,3 +25,7 @@
     color: white;
     padding: 0px 10px 0px 10px;
 }
+.ToDoHeader h1{
+    color: blueviolet;
+    font-size: 30px;
+}

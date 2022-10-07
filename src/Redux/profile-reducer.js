@@ -1,13 +1,19 @@
+import { getProfile } from "../api/api"
+
 const ADD_POST = 'ADD-POST'
 const NEW_POST_TEXT_CHANGE = 'NEW-POST-TEXT-CHANGE'
 const ADD_LIKE = 'ADD_LIKE'
 const DELAY_POST = 'DELAY_POST'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
+const SET_IS_FETCHING_PROFILE ='SET_IS_FETCHING_PROFILE'
+//const SET_EDIT_MODE = 'SET_EDIT_MODE'
 
 let stateInitialization = {
     posts: [],
     newPostText:'',
-    profile: null,
+    profile: {},
+    isFetching: false,
+    //editMode: false,
 }
 
 const profileReducer = (state = stateInitialization, action) =>{
@@ -46,11 +52,23 @@ const profileReducer = (state = stateInitialization, action) =>{
                 ...state,
                 profile: action.profile
             }
+        case SET_IS_FETCHING_PROFILE:
+            return{
+                ...state,
+                isFetching:action.isFetching
+            }
+        /*
+        case SET_EDIT_MODE:
+            return{
+                ...state,
+                editMode: action.editMode
+            }
+        */
         default: return state
     }
 }
 
-export const addPost= () =>({type: ADD_POST})
+export const addPost = () =>({type: ADD_POST})
 
 export const postChange = (text) =>{
     return {
@@ -76,4 +94,31 @@ export const setUserProfile = (profile) =>{
         profile: profile
     }
 }
+export const setIsFetchingProfile = (isFetching) =>{
+    return{
+        type: SET_IS_FETCHING_PROFILE,
+        isFetching: isFetching
+    }
+}
+/*
+export const setEditMode = (editMode) =>{
+    return{
+        type: SET_EDIT_MODE,
+        editMode,
+    }
+}
+*/
+export const getProfileThunkCreator = (userId) =>{
+    return(
+        (dispatch) =>{
+            dispatch(setIsFetchingProfile(true))
+            getProfile(userId)
+            .then(data =>{
+                dispatch(setUserProfile(data))
+                dispatch(setIsFetchingProfile(false))
+            })
+        }
+    )
+}
+
 export default profileReducer

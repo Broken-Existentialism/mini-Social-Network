@@ -1,14 +1,24 @@
 .header{
     background-color: brown;
-    padding: 1px;
+    padding: 5px;
     position:sticky;
-    top: 0;
+    top:0px;
+    z-index: 50;
 }
-.header img{
+.headerLogo img{
     width: 65px;
     height: 47px;
 }
 .headerContainer{
     margin: 0 auto;
     width: 960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.loginBlock a {
+    color: white;
+}
+.loginBlock {
+    color: white;
 }
